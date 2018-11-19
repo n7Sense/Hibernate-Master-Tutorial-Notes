@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+
+     <session-factory>
+
+           <property name="connection.driver_class" >oracle.jdbc.OracleDriver</property>
+           <property name="connection.url">jdbc:oracle:thin:@//localhost:1521/nsense</property>
+           <property name="connection.username">nSense</property>
+           <property name="connection.password">nsense</property>
+           <property name="connection.pool_size">10</property>
+           <property name="dilect">org.hibernate.dilect.Oracle12cDialect</property>
+           <property name="show_sql">true</property>
+           <property name="format_sql">true</property>
+           <property name="hbm2ddl.auto">create</property>
+           <mapping resource="/hbm/isA/user.hbm.xml"/>
+
+   </session-factory>
+
+
+</hibernate-configuration>

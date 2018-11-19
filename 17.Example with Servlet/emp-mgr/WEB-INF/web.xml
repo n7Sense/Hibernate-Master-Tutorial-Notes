@@ -1,0 +1,28 @@
+
+<web-app>
+	  <display-name>management</display-name>
+	  	<servlet>
+			<servlet-name>emp</servlet-name>
+			<servlet-class>manage.EmployeeServlet</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>emp</servlet-name>
+			<url-pattern>/empUrl</url-pattern>
+		</servlet-mapping>
+		
+		<servlet>
+			<servlet-name>dept</servlet-name>
+			<servlet-class>manage.DepartmentServlet</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>dept</servlet-name>
+			<url-pattern>/deptUrl</url-pattern>
+		</servlet-mapping>
+		
+
+	  <welcome-file-list>
+	    <welcome-file>index.html</welcome-file>
+	  </welcome-file-list>
+</web-app>

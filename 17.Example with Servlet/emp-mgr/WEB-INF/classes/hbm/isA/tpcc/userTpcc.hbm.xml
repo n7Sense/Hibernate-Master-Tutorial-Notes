@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="model.isA.tpcc.TPCCUser" table="tpcc_user">
+
+        <id name="userId" type="int">
+            <column name="user_id"/>
+        </id>
+        
+        <property name="userName" type="java.lang.String">
+            <column name="user_name"/>
+        </property>
+
+        <property name="userEmail" type="java.lang.String">
+            <column name="user_email"/>
+        </property>
+
+        <union-subclass name="model.isA.tpcc.SoftwereUser" table="softwere_user">
+            <property name="softwereUser"/>
+        </union-subclass>
+
+        <union-subclass name="model.isA.tpcc.HardwereUser" table="hardwere_user">
+            <property name="hardwereUser"/>
+        </union-subclass>
+    
+
+    </class>
+
+</hibernate-mapping>

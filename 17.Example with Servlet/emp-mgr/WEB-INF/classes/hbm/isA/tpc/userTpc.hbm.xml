@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="model.isA.tpc.User" table="tpc_users">
+
+        <id name="userId" type="int"> <column name="user_id"/>
+         <generator class="increment"/>
+    </id>
+        <discriminator column="user_type"/>
+
+        <property name="userName" type="java.lang.String"> <column name="user_name"/> </property>
+
+        <property name="userEmail" type="java.lang.String">
+            <column name="user_email"/>
+        </property>
+
+        <subclass name="model.isA.tpc.SuperUser" discriminator-value="Super">
+            <property name="createUser" type="java.lang.String">
+                <column name="created_user"/>
+            </property>
+        </subclass>
+        <subclass name="model.isA.tpc.AdminUser" discriminator-value="Admin">
+            <property name="assinedJob" type="java.lang.String">
+                <column name="job_assigned"/>
+            </property>
+        </subclass>
+        <subclass name="model.isA.tpc.ProjectManager" discriminator-value="manager">
+            <property name="creatingProject" type="java.lang.String">
+                <column name="projects"/>
+            </property>
+        </subclass>
+
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="model.isA.tpsc.PPRUser" table="tpsc_user">
+
+        <id name="userId" type="int">
+            <column name="user_id"/>
+        </id>
+        
+        <property name="userName" type="java.lang.String">
+            <column name="user_name"/>
+        </property>
+
+        <property name="userEmail" type="java.lang.String">
+            <column name="user_email"/>
+        </property>
+
+        <joined-subclass name="model.isA.tpsc.Programmer" table="programmer">
+            <key column="prog_id"></key>
+            <property name="programming"/>
+        </joined-subclass>
+
+        <joined-subclass name="model.isA.tpsc.InventoryManager" table="inventory_manager">
+            <key column="invent_id">             
+            </key>
+            <property name="inventoryManager"/>
+        </joined-subclass>
+        <joined-subclass name="model.isA.tpsc.ProductManager" table="Product_Manager">
+            <key column="product_id"></key>
+            <property name="productManager"/>
+        </joined-subclass>
+
+    </class>
+
+</hibernate-mapping>
