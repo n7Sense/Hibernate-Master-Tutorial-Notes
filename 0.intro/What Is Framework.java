@@ -3,7 +3,7 @@ What is Framework
 	Framework is a collection of jar file, we can download and place inside the CLASS PATH or BUILD path.
 	placing the jar file in class path or BUILD pat now our Framework installetion is completed.
 
-	But technology is notframework, technology like if we double-click on application it will installed like
+	But technology is not framework, technology like if we double-click on application it will installed like
 	JDK, TomCat Server, WebLogic Server, MySql.exe,
 
 

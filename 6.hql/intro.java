@@ -23,6 +23,10 @@
 
 
 
+	8. If you want insert bulk of record then only we have to go for HQL, if we want to insert SINGLE record then manually we can use session.save() method
+	9.
+
+	
 	SQl
 ========
 	1. It is related to Hibernate

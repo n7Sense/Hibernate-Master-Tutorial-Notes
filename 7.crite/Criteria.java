@@ -8,8 +8,7 @@ import org.hibernate.criterion.Projection;
 import org.hibernate.sql.JoinType;
 import org.hibernate.transform.ResultTransformer;
 
-public abstract interface Criteria
-  extends CriteriaSpecification
+public abstract interface Criteria extends CriteriaSpecification
 {
   public abstract String getAlias();
   
