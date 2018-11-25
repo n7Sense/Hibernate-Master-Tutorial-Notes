@@ -73,5 +73,20 @@ Example.1
         }
 
 Example.3 By Scalar Queries
+        //this type of Queries is called Scalar Queries to improve the performence
+        NativeQuery nativeQuery3 = session.createNativeQuery("SELECT named_id, name, rashi FROM named WHERE named_id = :nid").addScalar("named_Id", StandardBasicTypes.INTEGER).addScalar("name", StandardBasicTypes.STRING).addScalar("rashi", StandardBasicTypes.STRING);
+        /*
+        NativeQuery nativeQuery4 = session.createNativeQuery("SELECT named_id, name, rashi FROM named").addScalar("named_Id", StandardBasicTypes.INTEGER).addScalar("name", StandardBasicTypes.STRING).addScalar("rashi", StandardBasicTypes.STRING);
+        NativeQuery nativeQuery5 = session.getNamedNativeQuery("findAllNamedData").addScalar("named_Id", StandardBasicTypes.INTEGER).addScalar("name", StandardBasicTypes.STRING).addScalar("rashi", StandardBasicTypes.STRING);
+        NativeQuery nativeQuery6 = session.getNamedNativeQuery("findById").addScalar("named_Id", StandardBasicTypes.INTEGER).addScalar("name", StandardBasicTypes.STRING).addScalar("rashi", StandardBasicTypes.STRING);
+        */
 
+        nativeQuery3.setParameter("nid", new Integer(3));
+
+        List<Object> list3  = nativeQuery3.list();
+        System.out.println("************ Named Record By Scalar Query *******************");
+        for(Object nql: list3){
+            Object[] row3 = (Object[])nql;
+            System.out.println(row3[0]+" : "+row3[1]+" : "+row3[2]);
+        }
 		
