@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="model.Employee" table="employees">
+
+        <id name="employeeId" type="int"> <column name="employee_id"/> <generator class="increment"/> </id>
+
+        <version name="version" column="version_ins"/>
+
+        <property name="firstName" type="java.lang.String"> <column name="first_name"/> </property>
+
+        <property name="lastName" type="java.lang.String">
+            <column name="last_name"/>
+        </property>
+
+        <property name="email" type="java.lang.String">
+            <column name="email"/>
+        </property>
+
+        <property name="phoneNumber" type="java.lang.String">
+            <column name="phone_number"/>
+        </property>
+
+        <property name="hireDate" type="date">
+            <column name="hire_date"/>
+        </property>
+
+        <property name="jobId" type="java.lang.String">
+            <column name="job_Id"/>
+        </property>
+
+        <property name="salary" type="double">
+            <column name="salary"/>
+        </property>
+
+        <property name="commission" type="float">
+            <column name="commission"/>
+        </property>
+
+        <property name="managerId" type="int">
+            <column name="manager_id"/>
+        </property>
+
+        <property name="departmentId" type="int">
+            <column name="department_id"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

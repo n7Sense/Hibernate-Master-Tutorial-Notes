@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="model.Location" table="LOCATIONS">
+
+        <id name="locationId" type="int"> <column name="location_id"/>
+            <generator class="increment"/>
+        </id>
+
+        <property name="streetAddress" type="java.lang.String"> <column name="street_address"/> </property>
+
+        <property name="postalCode" type="java.lang.String"><column name="postal_code"/></property>
+
+        <property name="city" type="java.lang.String"><column name="city"/></property>
+
+        <property name="stateProvince" type="java.lang.String"><column name="state_province"/></property>
+
+        <property name="countryId" type="java.lang.String"><column name="country_id"/></property>
+    </class>
+
+</hibernate-mapping>

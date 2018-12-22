@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="model.hasA.otm.Author" table="Author">
+
+        <id name="authorId" type="int">
+            <column name="author_id" not-null="true"/> <generator class="increment"/>
+        </id>
+
+        <property name="authorName" type="java.lang.String">
+            <column name="author_name"/>
+        </property>
+
+        <set name="books" cascade="all" lazy="true">
+            <key column="author_id" />
+            <one-to-many class="model.hasA.otm.Books"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="model.NamedQueryModel" table="named">
+
+        <id name="namedId" type="int">
+            <column name="named_id" not-null="true"/>
+            <generator class="increment"/>
+
+        </id>
+
+        <property name="name" type="java.lang.String">
+            <column name="name"/>
+        </property>
+
+        <property name="rashi" column="rashi"/>
+
+    </class>
+    <query name="findRashiById">
+        <![CDATA[SELECT n.namedId, n.name, n.rashi FROM NamedQueryModel n WHERE n.namedId = :nid]]>
+    </query>
+
+    <sql-query name="findAllNamedData">
+            <![CDATA[SELECT * FROM named]]>
+    </sql-query>
+    <sql-query name="findById">
+        <![CDATA[SELECT * from named where named_id = :nid]]>
+    </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="model.hasA.mto.Faculty" table="Faculty">
+
+        <id name="facultyId" type="int">
+            <column name="faculty_id" not-null="true"/>
+            <generator class="increment"/>
+        </id>
+
+        <property name="facultyName" type="java.lang.String">
+            <column name="faculty_name"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

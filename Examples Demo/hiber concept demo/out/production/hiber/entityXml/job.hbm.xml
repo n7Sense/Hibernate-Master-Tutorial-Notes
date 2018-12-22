@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="model.Jobs" table="jobs">
+
+        <id name="jobId" type="java.lang.String">
+            <column name="job_id"/> <generator class="assigned"/>
+        </id>
+
+        <property name="jobTitle" type="java.lang.String"> <column name="job_title"/> </property>
+
+        <property name="minSalary" type="int"> <column name="min_salary"/></property>
+
+        <property name="maxSalary" type="int"> <column name="max_salary"/></property>
+
+    </class>
+
+</hibernate-mapping>

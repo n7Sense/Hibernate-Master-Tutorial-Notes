@@ -5,8 +5,8 @@
 	2. HQL (database independent query)
 	3. Cache Support 
 	4. Primary Key Generator
-	5. Validation (in the form of Annotation) it is recommended Validation. but WHY.? because those are Java Standard Implementation like JDBC
-		(JSER-303)
+	5. Validation (in the form of Annotation) it is recommended Validation. but WHY.? because those are Java Standard Implementation
+		like JDBC (JSER-303)
 	6. Exception Free 
 		we no need to handle any Exception.
 		it not throws any Compile Time Exception. only throws runtime Exception.
@@ -24,5 +24,3 @@
 	9. Search
 	10. Annotation Support
 	11. Connection pool.
-	
-

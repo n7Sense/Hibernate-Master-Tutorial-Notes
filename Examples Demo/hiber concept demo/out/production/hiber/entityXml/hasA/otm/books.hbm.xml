@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="model.hasA.otm.Books" table="books">
+
+        <id name="bookId" type="int">
+            <column name="book_id" not-null="true"/>
+            <generator class="increment"/>
+        </id>
+
+        <property name="bookName" type="java.lang.String">
+            <column name="book_name"/>
+        </property>
+
+
+    </class>
+</hibernate-mapping>

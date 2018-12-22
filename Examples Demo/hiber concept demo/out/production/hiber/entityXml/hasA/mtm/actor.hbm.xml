@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="model.hasA.mtm.Actor" table="actor">
+
+        <id name="actorId" type="int">
+            <column name="actor_id"/>
+        </id>
+
+        <property name="actorName" type="java.lang.String">
+            <column name="actor_name"/>
+        </property>
+
+        <set name="moviesSet" table="movies_actor">
+            <key column="actor_id"/>
+            <many-to-many class="model.hasA.mtm.Movies" column="movie_id"/>
+        </set>
+    </class>
+</hibernate-mapping>

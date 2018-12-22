@@ -40,6 +40,23 @@ Cache Support
 		 at this level one Single SessionFactory object can have opening of Session multipple times but Data will be Stored into SessionFactory Level
 		 for any No. Of user it will fetch 1st time only from Database. so Factory level cache is aplicable for entire application, 
 
+		 Hibernate second level cache uses a common cache for all the session object of a session factory. It is useful if you have multiple session objects from a session factory.
+
+		SessionFactory holds the second level cache data. It is global for all the session objects and not enabled by default.
+
+		Different vendors have provided the implementation of Second Level Cache.
+
+		EH Cache
+		OS Cache
+		Swarm Cache
+		JBoss Cache
+		Each implementation provides different cache usage functionality. There are four ways to use second level cache.
+
+		read-only: caching will work for read only operation.
+		nonstrict-read-write: caching will work for read and write but one at a time.
+		read-write: caching will work for read and write, can be used simultaneously.
+		transactional: caching will work for transaction.
+
 	3. Query Cache.
 			If same query applied 100 of times on database then for 1st time it will fetch from Database after that it will stored into Query Cache and from that 
 			Query Cache it will retrive data.

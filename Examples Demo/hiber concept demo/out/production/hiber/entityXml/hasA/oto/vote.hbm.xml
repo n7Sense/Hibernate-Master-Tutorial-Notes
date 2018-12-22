@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="model.hasA.oto.Vote" table="vote">
+
+        <id name="voteId">
+            <generator class="foreign">
+                <param name="property">voter</param>
+            </generator>
+        </id>
+
+        <property name="partyName" type="java.lang.String">
+            <column name="party_name"/>
+        </property>
+
+        <one-to-one name="voter" class="model.hasA.oto.Voter" />
+
+    </class>
+</hibernate-mapping>

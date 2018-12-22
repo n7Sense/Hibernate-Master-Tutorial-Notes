@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="model.JobGrade" table="JOB_GRADES">
+
+        <id name="grade" type="java.lang.String">
+            <column name="GRADE"/> <generator class="assigned"/>
+        </id>
+
+        <property name="lowestSal" type="int"> <column name="LOWEST_SAL"/> </property>
+
+        <property name="highestSal" type="int"> <column name="HIGHEST_SAL"/></property>
+
+    </class>
+
+</hibernate-mapping>

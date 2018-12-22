@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="model.isA.tpsc.Manager" table="managers">
+
+        <id name="managerId" type="int">
+            <column name="manager_id"/>
+            <generator class="increment"/>
+        </id>
+        <discriminator column="manager_type"/>
+
+        <property name="managerName" type="java.lang.String"> <column name="user_name"/> </property>
+
+        <property name="managerEmail" type="java.lang.String">
+            <column name="manager_email"/>
+        </property>
+
+        <joined-subclass name="model.isA.tpsc.Programmer" table="prog">
+            <key column="manager_id" foreign-key="managerId"></key>
+
+            <property name="programming" column="prog_type"/>
+            <property name="technology" column="tech_name"/>
+        </joined-subclass>
+
+        <joined-subclass name="model.isA.tpsc.InventoryManager" table="invt_mgr">
+            <key column="manager_id" foreign-key="managerId"></key>
+
+            <property name="inventoryManager" column="invtMgr"/>
+            <property name="location"/>
+        </joined-subclass>
+        <joined-subclass name="model.isA.tpsc.ProductManager" table="prod_mgr">
+            <key column="manager_id" foreign-key="managerId"></key>
+            <property name="productManager" column="prodName"/>
+            <property name="state" column="state"/>
+        </joined-subclass>
+
+    </class>
+
+</hibernate-mapping>
+
+<!--
+    <?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="model.isA.tpsc.Manager" table="managers">
+
+        <id name="managerId" type="int">
+            <column name="manager_id"/>
+            <generator class="increment"/>
+        </id>
+        <discriminator column="manager_type"/>
+
+        <property name="managerName" type="java.lang.String"> <column name="user_name"/> </property>
+
+        <property name="managerEmail" type="java.lang.String">
+            <column name="manager_email"/>
+        </property>
+
+        <joined-subclass name="model.isA.tpsc.Programmer" table="prog">
+            <key column="manager_id" foreign-key="managerId"></key>
+            <id name="progId" column="prog_id">
+                <generator class="increment"/>
+            </id>
+            <property name="programming" column="prog_type"/>
+            <property name="technology" column="tech_name"/>
+        </joined-subclass>
+
+        <joined-subclass name="model.isA.tpsc.InventoryManager" table="invt_mgr">
+            <key column="manager_id" foreign-key="managerId"></key>
+            <id name="invtId" column="invt_id">
+                <generator class="increment"/>
+            </id>
+            <property name="inventoryManager" column="invtMgr"/>
+            <property name="location"/>
+        </joined-subclass>
+        <joined-subclass name="model.isA.tpsc.ProductManager" table="prod_mgr">
+            <key column="manager_id" foreign-key="managerId"></key>
+            <id name="prodId" column="prod_id">
+                <generator class="increment"/>
+            </id>
+            <property name="productManager" column="prodName"/>
+            <property name="state" column="state"/>
+        </joined-subclass>
+
+    </class>
+
+</hibernate-mapping>
+-->
